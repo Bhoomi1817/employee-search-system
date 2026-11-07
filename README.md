@@ -21,39 +21,64 @@ A React-based Employee Directory Search System that allows users to search for e
 - Message displayed when no employees are found.
 - Reusable React components.
 - Environment variable configuration for the API base URL.
+- Previous API requests are cancelled when a newer search begins.
 
 ## Project Structure
 
 ```text
-frontend/
+Employee-Search/
+├── public/
 ├── src/
-│   ├── SearchBar.jsx
-│   ├── EmployeeCard.jsx
-│   ├── EmployeeList.jsx
+│   ├── assets/
 │   ├── services/
 │   │   └── employeeService.js
 │   ├── App.jsx
 │   ├── App.css
+│   ├── EmployeeCard.jsx
+│   ├── EmployeeList.jsx
+│   ├── SearchBar.jsx
+│   ├── index.css
 │   └── main.jsx
-├── .env
 ├── .env.example
-└── package.json
+├── .gitignore
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
 ## Setup Instructions
 
-1. Navigate to the frontend directory.
-2. Install dependencies:
+1. Clone the repository:
 
-   `npm install`
+```bash
+git clone https://github.com/Bhoomi1817/employee-search-system.git
+```
 
-3. Configure the API URL in `.env`:
+2. Navigate to the project directory:
 
-   `VITE_API_URL=http://localhost:8000`
+```bash
+cd employee-search-system
+```
 
-4. Start the development server:
+3. Install dependencies:
 
-   `npm run dev`
+```bash
+npm install
+```
+
+4. Create a `.env` file in the project root using `.env.example` as a reference.
+
+Configure the API URL:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
 
 ## Search Optimization
 
@@ -63,4 +88,6 @@ Previous requests are also cancelled when a newer search begins.
 
 ## Project Status
 
-Frontend implementation completed. Backend integration and end-to-end testing are pending.
+Frontend implementation completed.
+
+Backend implementation and end-to-end API testing are pending. The frontend is configured to communicate with a backend API through the environment variable `VITE_API_URL`.
